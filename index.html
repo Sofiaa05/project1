@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <title>Do you wanna date me?</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="date.css">
+</head>
+<body>
+    <div id="ask" class="container">
+        <div>
+            <h1 class = "header_text">Are you ready for the boyfriend promotion yet?</h1>
+        </div>
+        <div class="gif_container1">
+        <img src="image/first.gif" alt="Cute animation">
+        </div>
+        <div class = "buttons">
+            <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+
+    <div id="ans" class="container">
+        <div >
+            <h1 class = "header_text">You + Me = Official couple? WeeWaaa!!</h1>
+        </div>
+        <div class="gif_container2">
+            <img id="second" src="image/ans.gif" alt="Cute animated illustration">
+        </div>
+        <video id="ansvideo" width="0" height="0" controls>
+            <source src="image/Cheering.mp4" 
+               type="video/mp4">
+        </video>
+    </div>
+    <script>
+        function nextPage() {
+            document.getElementById('ask').style.display = 'none';
+            document.getElementById('ans').style.display = 'block';
+            document.getElementById('ansvideo').play();
+        }
+
+        function moveButton() {
+            const noButton = document.getElementById('noButton');
+            noButton.style.position = 'absolute';
+            noButton.style.left = Math.random() * (window.innerWidth - noButton.offsetWidth) + 'px';
+            noButton.style.top = Math.random() * (window.innerHeight - noButton.offsetHeight) + 'px';
+            document.getElementById('novideo').play();
+        }
+    </script>
+</body>
+</html>
